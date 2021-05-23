@@ -161,7 +161,7 @@ body {
 
 .main-title {
   font-family: "Bebas Neue", cursive;
-  font-size: 8em;
+  font-size: 10rem;
   position: absolute;
   bottom: 50px;
   left: 30px;
@@ -171,7 +171,11 @@ body {
   display: inline-block;
   position: relative;
   background: transparent;
-  color: #ff2a2a;
+  transition: text-shadow 0.3s ease-out;
+  color: #c00000;
+}
+.title-accent:hover {
+  text-shadow: 0 10px 0 #000;
 }
 
 #title-dev {
@@ -181,25 +185,18 @@ body {
   user-select: all;
   content: "";
   display: inline-block;
-  transform: translateX(80%);
+  transform: translateX(20vw);
   transition: all 0s;
-}
-#title-dev::after {
-  color: transparent;
-  background-clip: text;
-  background-image: linear-gradient(to right, #d1d1d1 70%, transparent 100%);
-  background-position: -500px 0;
-  background-repeat: none;
 }
 #title-dev::before {
   position: absolute;
   left: 0;
   bottom: -30px;
-  transform: translateX(-50vw);
+  transform: translateX(-100vw);
   font-size: 3rem;
 }
 #title-dev:hover::before {
-  content: "(and css nerd)";
+  content: "(and css/sass nerd)";
   transform: translateX(0);
   transition: all 0.5s 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   user-select: all;
@@ -212,6 +209,19 @@ body {
   background-position: 100px 0;
 }
 
+.rotating-letter {
+  display: inline-block;
+}
+
+.rotating-letter-animate {
+  animation: rotate 1s linear 1;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
 @keyframes border-wiggle {
   0% {
     text-shadow: 10px 0 20px #ef0000;
