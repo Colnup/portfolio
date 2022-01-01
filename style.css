@@ -1,0 +1,24 @@
+html {
+  --screen-height: 100vh;
+}
+
+main {
+  height: var(--screen-height);
+  width: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+
+section.screen {
+  scroll-snap-align: center;
+  height: var(--screen-height);
+  min-width: 100%;
+  background-color: red;
+  position: relative;
+  display: block;
+}
+
+section:nth-child(2) {
+  background-color: blue !important;
+}
