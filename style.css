@@ -1,5 +1,44 @@
+/* useful link for fixing margins of childs moving the section, create new block formating context
+  cf : https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context */
+
 html {
   --screen-height: 100vh;
+  --separator-height: 4px;
+  --main-color: hsl(235, 64%, 12%);
+  --off-color: hsl(235, 64%, 20%);
+  --accent-color: hsl(235, 64%, 40%);
+  --text-color: hsl(47, 70%, 75%);
+  --text-color-accent: hsl(47, 70%, 55%);
+  color: var(--text-color);
+}
+
+/* Rainblow EM */
+em {
+  /* rainbow backround color */
+  background: linear-gradient(
+    to right,
+    hsl(0, 100%, 50%),
+    hsl(60, 100%, 50%),
+    hsl(120, 100%, 50%),
+    hsl(180, 100%, 50%),
+    hsl(240, 100%, 50%),
+    hsl(300, 100%, 50%),
+    hsl(360, 100%, 50%)
+  );
+  background-size: 400% 100%;
+  background-repeat: repeat-x;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow 15s linear infinite;
+  font-style: normal;
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -400% 0%;
+  }
 }
 
 main {
@@ -14,11 +53,70 @@ section.screen {
   scroll-snap-align: center;
   height: var(--screen-height);
   min-width: 100%;
-  background-color: red;
+  background-color: var(--main-color);
   position: relative;
   display: block;
+  /* For fixing child elements from moving screen with margin-top */
+  contain: layout;
 }
 
-section:nth-child(2) {
-  background-color: blue !important;
+/* Separators */
+section.screen:not(:first-child) {
+  margin-top: var(--separator-height);
+}
+
+section.screen::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: calc(0px - var(--separator-height));
+  left: 0;
+  width: 100%;
+  height: var(--separator-height);
+  background-color: var(--accent-color);
+  transition: opacity 0.5s ease-out;
+}
+/* Other stuff */
+
+.title-container {
+  position: absolute;
+  left: 15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-title {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: var(--text-color-accent);
+}
+.subtitle {
+  font-size: 1.5rem;
+  align-self: flex-start;
+}
+
+/* animation for blinker */
+.blinker {
+  animation: blinker 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* PROJECTS GRID */
+.projects-container {
+  margin-top: 500px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  margin-top: 5rem;
 }
