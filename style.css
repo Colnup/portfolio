@@ -80,7 +80,7 @@ section.screen::after {
 
 .title-container {
   position: absolute;
-  left: 15rem;
+  margin-left: clamp(0,15rem,40%);
   top: 50%;
   transform: translateY(-50%);
   display: flex;
