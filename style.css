@@ -10,6 +10,7 @@ html {
   --text-color: hsl(47, 70%, 75%);
   --text-color-accent: hsl(47, 70%, 55%);
   color: var(--text-color);
+  font-family: var(--ff-primary);
 }
 
 /* Rainblow EM */
