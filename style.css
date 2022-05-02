@@ -4,8 +4,8 @@
 html {
   --screen-height: 100vh;
   --separator-height: 4px;
-  --main-color: hsl(0, 0%, 0%);
-  --off-color: hsl(203, 74%, 13%);
+  --main-color: hsl(0, 0%, 10%);
+  --off-color: hsl(0, 0%, 25%);
   --accent-color: hsl(235, 64%, 40%);
   --off-accent-color: hsl(235, 64%, 20%);
   --text-color: hsl(0, 0%, 100%);
