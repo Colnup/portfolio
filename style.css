@@ -4,12 +4,12 @@
 html {
   --screen-height: 100vh;
   --separator-height: 4px;
-  --main-color: hsl(204, 65%, 16%);
-  --off-color: hsl(204, 65%, 21%);
+  --main-color: hsl(0, 0%, 0%);
+  --off-color: hsl(203, 74%, 13%);
   --accent-color: hsl(235, 64%, 40%);
   --off-accent-color: hsl(235, 64%, 20%);
-  --text-color: hsl(17, 25%, 85%);
-  --text-color-accent: hsl(118, 54%, 47%);
+  --text-color: hsl(114, 98%, 51%);
+  --text-color-accent: hsl(56, 95%, 50%);
   color: var(--text-color);
   font-family: var(--ff-primary);
 }
