@@ -8,8 +8,8 @@ html {
   --off-color: hsl(203, 74%, 13%);
   --accent-color: hsl(235, 64%, 40%);
   --off-accent-color: hsl(235, 64%, 20%);
-  --text-color: hsl(114, 98%, 51%);
-  --text-color-accent: hsl(56, 95%, 50%);
+  --text-color: hsl(0, 0%, 100%);
+  --text-color-accent: hsl(123, 95%, 50%);
   color: var(--text-color);
   font-family: var(--ff-primary);
 }
